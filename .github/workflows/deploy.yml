@@ -46,11 +46,11 @@ jobs:
           sudo docker rm create-review || true
 
           echo "📁 Creando archivo .env remoto..."
-          cat <<EOF | sudo tee /home/ubuntu/create-review.env
+          sudo bash -c 'cat > /home/ubuntu/create-review.env <<EOF
 NEO4J_URI=${{ secrets.NEO4J_URI }}
 NEO4J_USER=${{ secrets.NEO4J_USER }}
 NEO4J_PASSWORD=${{ secrets.NEO4J_PASSWORD }}
-EOF
+EOF'
 
           echo "🚀 Iniciando nuevo contenedor..."
           sudo docker run -d \
