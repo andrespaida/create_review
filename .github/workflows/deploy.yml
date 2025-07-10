@@ -1,9 +1,9 @@
-name: Deploy create-review to EC2 (main)
+name: Deploy create-review to EC2 (qa)
 
 on:
   push:
     branches:
-      - main
+      - qa
 
 jobs:
   deploy:
